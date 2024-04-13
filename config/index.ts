@@ -46,5 +46,5 @@ export const siteConfig: Metadata = {
 } as const;
 
 export const links = {
-  sourceCode: "https://github.com/sanidhyy/duolingo-clone",
+  sourceCode: "https://github.com/Ajay1105/minor-project",
 } as const;
