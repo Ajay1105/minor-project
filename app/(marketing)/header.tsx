@@ -1,3 +1,4 @@
+"use client";
 import {
   ClerkLoaded,
   ClerkLoading,
@@ -5,7 +6,6 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-  auth,
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import Image from "next/image";
@@ -13,19 +13,28 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { links } from "@/config";
+import { useAuth } from "@clerk/clerk-react";
+import { useDarkModeStore } from "@/store/darkModeStore";
 
 export const Header = () => {
-  const { userId } = auth();
+  const { userId } = useAuth();
+  const { darkMode,toggleDarkMode } = useDarkModeStore();
+
+
 
   return (
     <header className="h-20 w-full border-b-2 border-slate-200 px-4">
       <div className="mx-auto flex h-full items-center justify-between lg:max-w-screen-lg">
         <Link href="/" className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
-          <Image src="/abc.png" alt="Mascot" height={40} width={40} className="object-cover"/>
+          <Image
+            src="/abc.png"
+            alt="Mascot"
+            height={40}
+            width={40}
+            className="object-cover"
+          />
 
-          <h1 className="text-2xl font-extrabold tracking-wide">
-            SpeechSavvy
-          </h1>
+          <h1 className="text-2xl font-extrabold tracking-wide">SpeechSavvy</h1>
         </Link>
 
         <div className="flex gap-x-3">
