@@ -23,7 +23,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <div className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
           <Image src="/abcAlone.png" alt="Mascot" height={40} width={40} />
 
-          <h1 className="text-2xl font-extrabold tracking-wide text-black">
+          <h1 className="text-2xl font-extrabold tracking-wide text-black dark:text-white">
             SpeechSavvy
           </h1>
         </div>
