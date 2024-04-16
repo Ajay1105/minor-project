@@ -7,6 +7,7 @@ import { HeartsModal } from "@/components/modals/hearts-modal";
 import { PracticeModal } from "@/components/modals/practice-modal";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config";
+import { useDarkModeStore } from "@/store/darkModeStore";
 
 import "./globals.css";
 
@@ -18,11 +19,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = siteConfig;
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) 
+{
+
   return (
     <ClerkProvider
       appearance={{
@@ -35,7 +34,7 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body className={font.className}>
+        <body className={`${font.className}`}>
           <Toaster theme="light" richColors closeButton />
           <ExitModal />
           <HeartsModal />
