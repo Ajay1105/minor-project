@@ -34,7 +34,7 @@ const Pronunciation = async () => {
         
           <FeedWrapper>
             <Header title={"Pronunciations"} />
-              <p className=' text-4xl text-black font-semibold italic text-center mt-8 mb-3'>स्वर</p>
+              <p className=' text-4xl text-black font-semibold italic text-center mt-8 mb-3 dark:text-white'>स्वर</p>
             <div className='flex flex-wrap justify-center md:ml-12 md:mr-20'>
               {vowels.map((word, index) => (
                 <button className='w-20 h-16 text-2xl border-black border-2 m-2 bg-slate-700 hover:bg-slate-600 hover:shadow-xl hover:shadow-gray-700 text-white font-semibold rounded-lg' key={`soundbtn/${index}`} onClick={()=>handleClick(word)}>
@@ -42,7 +42,7 @@ const Pronunciation = async () => {
                 </button>
               ))}
             </div>
-              <p className=' text-4xl text-black font-semibold italic text-center mt-8 mb-3'>व्यंजन</p>
+              <p className=' text-4xl text-black font-semibold italic text-center mt-8 mb-3 dark:text-white'>व्यंजन</p>
             <div className='flex flex-wrap justify-center md:ml-12 md:mr-20'>
               {consonants.map((word, index) => (
                 <button className='w-20 h-16 text-2xl border-black border-2 m-2 bg-slate-700 hover:bg-slate-600 hover:shadow-xl hover:shadow-gray-700 text-white font-semibold rounded-lg' key={`soundbtn/${index}`} onClick={()=>handleClick(word)}>
