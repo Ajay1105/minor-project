@@ -1,6 +1,5 @@
 import { ClerkLoading, ClerkLoaded, UserButton } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -20,8 +19,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
       )}
     >
       <Link href="/learn">
-        <div className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
-          <Image src="/abcAlone.png" alt="Mascot" height={40} width={40} />
+        <div className="flex items-center pb-7 pl-4 pt-8">
+          <div className="h-[40px] w-[40px]">
+            <img src="/abc-removebg.png" alt="Mascot" className="object-cover" />
+          </div>
 
           <h1 className="text-2xl font-extrabold tracking-wide text-black">
             SpeechSavvy
