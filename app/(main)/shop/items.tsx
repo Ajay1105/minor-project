@@ -48,7 +48,7 @@ export const Items = ({
         <Image src="/heart.svg" alt="Heart" height={60} width={60} />
 
         <div className="flex-1">
-          <p className="text-base font-bold text-neutral-700 lg:text-xl">
+          <p className="text-base font-bold text-neutral-700 dark:text-white lg:text-xl">
             Refill hearts
           </p>
         </div>
@@ -78,7 +78,7 @@ export const Items = ({
         <Image src="/unlimited.svg" alt="Unlimited" height={60} width={60} />
 
         <div className="flex-1">
-          <p className="text-base font-bold text-neutral-700 lg:text-xl">
+          <p className="text-base font-bold text-neutral-700 dark:text-white lg:text-xl">
             Unlimited hearts
           </p>
         </div>
