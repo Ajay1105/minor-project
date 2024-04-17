@@ -19,7 +19,7 @@ const buttonVariants = cva(
 
         primary:
           "bg-sky-400 text-primary-foreground hover:bg-sky-400/90 border-sky-500 border-b-4 active:border-b-0",
-        primaryOutline: "bg-white text-blue-500 hover:bg-slate-100",
+        primaryOutline: "bg-white text-blue-500 dark:text-slate-800 hover:bg-slate-100",
 
         secondary:
           "bg-blue-500 text-primary-foreground hover:bg-blue-500/90 border-blue-600 border-b-4 active:border-b-0",
@@ -38,10 +38,10 @@ const buttonVariants = cva(
         superOutline: "bg-white text-indigo-500 hover:bg-slate-100",
 
         ghost:
-          "bg-transparent text-slate-500 border-transparent border-0 hover:bg-slate-100",
+          "bg-transparent text-slate-500 dark:text-white border-transparent border-0 hover:bg-blue-200 dark:hover:bg-slate-800",
 
         sidebar:
-          "bg-transparent text-slate-500 border-2 border-transparent hover:bg-slate-100 transition-none",
+          "bg-transparent text-slate-500 dark:text-white border-2 border-transparent hover:bg-slate-100 dark:hover:text-[#131f24] transition-none",
         sidebarOutline:
           "bg-blue-800/15 text-blue-600 border-blue-400 border-2 hover:bg-blue-800/20 transition-none",
       },

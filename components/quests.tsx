@@ -9,9 +9,9 @@ type QuestsProps = { points: number };
 
 export const Quests = ({ points }: QuestsProps) => {
   return (
-    <div className="space-y-4 rounded-xl border-2 p-4">
+    <div className="space-y-4 rounded-xl border-2  dark:border-slate-200/25 p-4">
       <div className="flex w-full items-center justify-between space-y-2">
-        <h3 className="text-lg font-bold">Quests</h3>
+        <h3 className="text-lg font-bold dark:text-white">Quests</h3>
 
         <Link href="/quests">
           <Button size="sm" variant="primaryOutline">
@@ -32,7 +32,7 @@ export const Quests = ({ points }: QuestsProps) => {
               <Image src="/points.svg" alt="Points" width={40} height={40} />
 
               <div className="flex w-full flex-col gap-y-2">
-                <p className="text-sm font-bold text-neutral-700">
+                <p className="text-sm font-bold text-neutral-700 dark:text-white">
                   {quest.title}
                 </p>
 

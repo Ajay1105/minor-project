@@ -18,14 +18,14 @@ export const Header = () => {
   // const { userId } = auth();
 
   return (
-    <header className="h-20 w-full border-b-2 border-slate-200 px-4">
+    <header className="h-20 w-full border-b-2 dark:border-slate-200/25 px-4">
       <div className="mx-auto w-full flex h-full items-center justify-between px-8">
         <Link href="/" className="flex items-center pb-7 pt-8">
           <div className="h-[60px] w-[60px]">
             <img src="/abc-removebg.png" alt="Mascot" className="object-cover"/>
           </div>
 
-          <h1 className="text-2xl font-extrabold tracking-wide">
+          <h1 className="text-2xl font-extrabold tracking-wide dark:text-white">
             SpeechSavvy
           </h1>
         </Link>
