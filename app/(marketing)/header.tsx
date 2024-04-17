@@ -15,7 +15,6 @@ import { Button } from "@/components/ui/button";
 import { links } from "@/config";
 
 export const Header = () => {
-  // const { userId } = auth();
 
   return (
     <header className="h-20 w-full border-b-2 dark:border-slate-200/25 px-4">
