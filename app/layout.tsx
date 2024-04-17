@@ -33,7 +33,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         },
       }}
     >
-      <html lang="en">
+      <html lang="en" className="dark">
         <body className={`${font.className}`}>
           <Toaster theme="light" richColors closeButton />
           <ExitModal />

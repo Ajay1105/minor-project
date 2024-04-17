@@ -24,7 +24,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             <img src="/abc-removebg.png" alt="Mascot" className="object-cover" />
           </div>
 
-          <h1 className="text-2xl font-extrabold tracking-wide text-black">
+          <h1 className="text-2xl font-extrabold tracking-wide text-black dark:text-white">
             SpeechSavvy
           </h1>
         </div>
