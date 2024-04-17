@@ -203,10 +203,7 @@ export const Quiz = ({
     );
   }
 
-  const title =
-    challenge.type === "ASSIST"
-      ? "Select the correct meaning"
-      : challenge.question;
+  const title = challenge.question
 
   return (
     <>
@@ -227,7 +224,7 @@ export const Quiz = ({
 
             <div>
               {challenge.type === "ASSIST" && (
-                <QuestionBubble question={challenge.question} />
+                <QuestionBubble audioSrc={challenge.audioSrc} />
               )}
 
               <Challenge
