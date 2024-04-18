@@ -8,6 +8,7 @@ import { PracticeModal } from "@/components/modals/practice-modal";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config";
 import { useDarkModeStore } from "@/store/darkModeStore";
+import {dark} from "@clerk/themes";
 
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         variables: {
           colorPrimary: "#22C55E",
         },
+        baseTheme: dark,
       }}
     >
       <html lang="en" className="dark">
