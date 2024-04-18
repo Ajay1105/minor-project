@@ -34,7 +34,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       }}
     >
       <html lang="en" className="dark">
-        <body className={`${font.className}`}>
+        <body className={`${font.className} dark:bg-[#131f24]`}>
           <Toaster theme="light" richColors closeButton />
           <ExitModal />
           <HeartsModal />

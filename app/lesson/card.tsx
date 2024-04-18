@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 type CardProps = {
   id: number;
   text: string;
-  imageSrc: string | null;
   audioSrc: string | null;
   shortcut: string;
   selected?: boolean;
@@ -21,7 +20,6 @@ type CardProps = {
 
 export const Card = ({
   text,
-  imageSrc,
   audioSrc,
   shortcut,
   selected,
@@ -36,11 +34,15 @@ export const Card = ({
   const handleClick = useCallback(() => {
     if (disabled) return;
 
-    void controls.play();
+    // void controls.play();
     onClick();
-  }, [disabled, onClick, controls]);
+  }, [disabled, onClick]);
 
   useKey(shortcut, handleClick, {}, [handleClick]);
+
+  const playSound = () => {
+    void controls.play();
+  }
 
   return (
     <div
@@ -58,12 +60,6 @@ export const Card = ({
         type === "ASSIST" && "w-full lg:p-3"
       )}
     >
-      {audio}
-      {imageSrc && (
-        <div className="relative mb-4 aspect-square max-h-[80px] w-full lg:max-h-[150px]">
-          <Image src={imageSrc} fill alt={text} />
-        </div>
-      )}
 
       <div
         className={cn(
@@ -80,7 +76,23 @@ export const Card = ({
             selected && status === "wrong" && "text-rose-500"
           )}
         >
-          {text}
+          {type === "ASSIST" ? (
+            text
+          ) : (
+            <div
+              className="flex h-[65px] w-[65px] cursor-pointer items-center justify-center rounded-[25px] bg-[#48BFF8] hover:bg-[#63cafa]"
+              onClick={playSound}
+            >
+              {audio}
+              <Image
+                src="/speaker.svg"
+                alt="Mascot"
+                height={40}
+                width={40}
+                className=""
+              />
+            </div>
+          )}
         </p>
 
         <div

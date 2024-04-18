@@ -20,7 +20,7 @@ export const UnitBanner = ({ title, description }: UnitBannerProps) => {
         <Button
           size="lg"
           variant="custom"
-          className="hidden border-2 border-b-4 active:border-b-2 xl:flex"
+          className="hidden border-2 border-b-4 dark:border-none active:border-b-2 xl:flex"
         >
           <NotebookText className="mr-2" />
           Continue
