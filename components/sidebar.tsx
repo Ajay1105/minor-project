@@ -1,6 +1,7 @@
 import { ClerkLoading, ClerkLoaded, UserButton } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import Link from "next/link";
+import { currentUser } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 
@@ -10,7 +11,10 @@ type SidebarProps = {
   className?: string;
 };
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = async({ className }: SidebarProps) => {
+  const user = await currentUser();
+  // @ts-ignore
+  const { imageUrl } = user;
   return (
     <div
       className={cn(
@@ -36,17 +40,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <SidebarItem label="Quests" href="/quests" iconSrc="/quests.svg" />
         <SidebarItem label="Shop" href="/shop" iconSrc="/shop.svg" />
         <SidebarItem label="pronunciation" href="/pronunciation" iconSrc="https://d35aaqx5ub95lt.cloudfront.net/vendor/597da4049ec7b1ee932d1b95ca424e0d.svg" />
+        <SidebarItem label="account" href="/userpage" iconSrc={imageUrl} />
       </div>
 
-      <div className="p-4">
-        <ClerkLoading>
-          <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
-        </ClerkLoading>
-
-        <ClerkLoaded>
-          <UserButton afterSignOutUrl="/" />
-        </ClerkLoaded>
-      </div>
     </div>
   );
 };
