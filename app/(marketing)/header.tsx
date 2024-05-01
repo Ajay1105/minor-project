@@ -57,6 +57,7 @@ export const Header = () => {
               // className={userId ? "pt-1.5" : "pt-3"}
             >
               <Image
+              className="dark:filter dark:invert"
                 src="/github.svg"
                 alt="Source Code"
                 height={30}
