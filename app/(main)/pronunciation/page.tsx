@@ -44,9 +44,9 @@ const Pronunciation = async () => {
         <FeedWrapper>
           <Header title={"Pronunciation"} />
 
-          <div className="mt-[10rem]">
+          <div className="mt-[10rem] pl-[7rem]">
             <Form handleSubmit={handleSubmit} />
-            <p>{meaning.definition}</p>
+            <p className="mt-[2rem]"><span className="text-lg font-semibold mt-5">Definition :</span>      hindi speaks</p>
           </div>
 
         </FeedWrapper>
