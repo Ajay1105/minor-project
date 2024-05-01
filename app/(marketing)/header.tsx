@@ -58,7 +58,7 @@ export const Header = () => {
             >
               <Image
                 className="dark:filter dark:invert"
-                src={`/github.svg`}
+                src="/github.svg"
                 alt="Source Code"
                 height={30}
                 width={30}

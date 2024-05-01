@@ -26,7 +26,7 @@ export const SidebarItem = ({ label, iconSrc, href }: SidebarItemProps) => {
         <Image
           src={iconSrc}
           alt={label}
-          className="mr-5"
+          className="mr-5 rounded-full"
           height={32}
           width={32}
         />

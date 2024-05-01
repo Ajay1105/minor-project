@@ -34,14 +34,19 @@ export const Card = ({
   const handleClick = useCallback(() => {
     if (disabled) return;
 
-    void controls.play();
+    // void controls.play();
     onClick();
-  }, [disabled, onClick, controls]);
+  }, [disabled, onClick]);
 
   useKey(shortcut, handleClick, {}, [handleClick]);
 
+  const playSound = () => {
+    void controls.play();
+  }
+
   return (
     <div
+      onClick={handleClick}
       className={cn(
         "h-full cursor-pointer rounded-xl border-2 border-b-4 p-4 hover:bg-black/5 active:border-b-2 lg:p-6",
         selected && "border-sky-300 bg-sky-100 hover:bg-sky-100",
@@ -65,7 +70,7 @@ export const Card = ({
         {type === "ASSIST" && <div aria-hidden />}
         <p
           className={cn(
-            "text-sm text-neutral-600 dark:text-white lg:text-base",
+            "text-sm text-neutral-600 lg:text-base dark:text-white",
             selected && "text-sky-500",
             selected && status === "correct" && "text-green-500",
             selected && status === "wrong" && "text-rose-500"
@@ -76,7 +81,7 @@ export const Card = ({
           ) : (
             <div
               className="flex h-[65px] w-[65px] cursor-pointer items-center justify-center rounded-[25px] bg-[#48BFF8] hover:bg-[#63cafa] border-blue-600 border-b-4 active:border-b-0"
-              onClick={handleClick}
+              onClick={playSound}
             >
               {audio}
               <Image
