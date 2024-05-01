@@ -1,7 +1,4 @@
-import { ClerkLoading, ClerkLoaded, UserButton } from "@clerk/nextjs";
-import { Loader } from "lucide-react";
 import Link from "next/link";
-import { currentUser } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 
