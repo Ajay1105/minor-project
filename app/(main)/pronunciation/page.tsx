@@ -11,7 +11,10 @@ import Form from './Form';
 
 const Pronunciation = async () => {
 
-    const [loaoding, setLoaoding] = useState(false);
+    const [meaning, setMeaning] = useState({
+        definition: "",
+        example: ""
+    });
 
     const userProgressData = UserProgress;
     const userSubscriptionData = UserSubscription;
@@ -26,14 +29,18 @@ const Pronunciation = async () => {
 
     const isPro = !!userSubscription?.isActive;
 
-    const handleSubmit = async(text: string) => {
-        setLoaoding(true);
+    const handleSubmit = async (text: string) => {
         const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${text}`
         const response = await fetch(url);
         console.log(response);
         const data = await response.json();
+        console.log(data);
         const a = new Audio(data[0].phonetics[0].audio);
         a.play();
+        setMeaning({
+            definition: data[0].meanings[0].definitions[0].definition,
+            example: data[0].meanings[0].definitions[0].example
+        });
     }
 
     return (
@@ -44,6 +51,8 @@ const Pronunciation = async () => {
                     <Header title={"Pronunciation"} />
 
                     <Form handleSubmit={handleSubmit} />
+
+                    <p>{meaning.definition}</p>
 
                 </FeedWrapper>
                 <StickyWrapper>
