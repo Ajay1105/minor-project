@@ -65,7 +65,7 @@ export const Card = ({
         {type === "ASSIST" && <div aria-hidden />}
         <p
           className={cn(
-            "text-sm text-neutral-600 lg:text-base",
+            "text-sm text-neutral-600 dark:text-white lg:text-base",
             selected && "text-sky-500",
             selected && status === "correct" && "text-green-500",
             selected && status === "wrong" && "text-rose-500"
@@ -75,7 +75,7 @@ export const Card = ({
             text
           ) : (
             <div
-              className="flex h-[65px] w-[65px] cursor-pointer items-center justify-center rounded-[25px] bg-[#48BFF8] hover:bg-[#63cafa]"
+              className="flex h-[65px] w-[65px] cursor-pointer items-center justify-center rounded-[25px] bg-[#48BFF8] hover:bg-[#63cafa] border-blue-600 border-b-4 active:border-b-0"
               onClick={handleClick}
             >
               {audio}
