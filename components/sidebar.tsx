@@ -1,3 +1,4 @@
+import { currentUser } from "@clerk/nextjs";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
